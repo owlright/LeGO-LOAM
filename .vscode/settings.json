@@ -1,0 +1,11 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/LeGO-LOAM",
+    "python.autoComplete.extraPaths": [
+        "/Users/sjh/catkin_ws/devel/lib/python3.11/site-packages",
+        "/Users/sjh/miniconda3/envs/ros/lib/python3.11/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/Users/sjh/catkin_ws/devel/lib/python3.11/site-packages",
+        "/Users/sjh/miniconda3/envs/ros/lib/python3.11/site-packages"
+    ]
+}

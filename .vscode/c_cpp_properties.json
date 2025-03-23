@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/Users/sjh/catkin_ws/devel/include/**",
+                "/Users/sjh/miniconda3/envs/ros/include/**",
+                "/Users/sjh/catkin_ws/src/LeGO-LOAM/LeGO-LOAM/include/**"
+            ],
+            "name": "ROS",
+            "configurationProvider": "ms-vscode.cmake-tools"
+        }
+    ],
+    "version": 4
+}
