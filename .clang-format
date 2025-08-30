@@ -1,0 +1,15 @@
+---
+Language:        Cpp
+BasedOnStyle:    WebKit
+IndentWidth:     4
+ColumnLimit:     120
+AlwaysBreakTemplateDeclarations: true
+AllowShortFunctionsOnASingleLine: All # 如果函数体内只有一行语句，直接写成一行
+ConstructorInitializerAllOnOneLineOrOnePerLine: true # 强制所有初始化列表尽量放在一行。
+BreakStringLiterals: true
+AlignAfterOpenBracket: AlwaysBreak
+AllowShortIfStatementsOnASingleLine: true # 如果if 后面没有 {} 且是单语句时，紧贴在同一行
+AlignTrailingComments: true
+NamespaceIndentation: None # 命名空间不缩进
+AlignArrayOfStructures: Left # 数组对齐
+SeparateDefinitionBlocks: Always # 函数定义间用空行分隔
