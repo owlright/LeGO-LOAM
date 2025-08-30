@@ -1,3 +1,8 @@
 cmake-build/
 .DS_Store
 .vscode/
+build/
+*.out
+*.bag
+bin/*
+!bin/.gitkeep
