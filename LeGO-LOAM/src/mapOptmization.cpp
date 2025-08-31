@@ -176,6 +176,13 @@ private:
     float transformTobeMapped[6];
     float transformBefMapped[6];
     float transformAftMapped[6];
+    Eigen::Affine3f translast;
+    Eigen::Affine3f transSum;
+    Eigen::Affine3f transIncre;
+    Eigen::Affine3f transTobeMapped;
+    Eigen::Affine3f transBefMapped;
+    Eigen::Affine3f transAftMapped;
+
 
 
     int imuPointerFront;
