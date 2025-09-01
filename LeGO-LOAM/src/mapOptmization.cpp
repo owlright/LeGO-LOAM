@@ -385,16 +385,17 @@ public:
 
     void transformAssociateToMap()
     {
+        // Ry(-s_ry) * (p_bef - p_sum)
         float x1 = cos(transformSum[1]) * (transformBefMapped[3] - transformSum[3])
                  - sin(transformSum[1]) * (transformBefMapped[5] - transformSum[5]);
         float y1 = transformBefMapped[4] - transformSum[4];
         float z1 = sin(transformSum[1]) * (transformBefMapped[3] - transformSum[3])
                  + cos(transformSum[1]) * (transformBefMapped[5] - transformSum[5]);
-
+        // Rx(-s_rx) * Ry(-s_ry) * (p_bef - p_sum)
         float x2 = x1;
         float y2 = cos(transformSum[0]) * y1 + sin(transformSum[0]) * z1;
         float z2 = -sin(transformSum[0]) * y1 + cos(transformSum[0]) * z1;
-
+        // transformIncre[3:5] = Rz(-s_rz) * Rx(-s_rx) * Ry(-s_ry) * (p_bef - p_sum)
         transformIncre[3] = cos(transformSum[2]) * x2 + sin(transformSum[2]) * y2;
         transformIncre[4] = -sin(transformSum[2]) * x2 + cos(transformSum[2]) * y2;
         transformIncre[5] = z2;
@@ -641,9 +642,9 @@ public:
         double roll, pitch, yaw;
         geometry_msgs::Quaternion geoQuat = laserOdometry->pose.pose.orientation;
         tf::Matrix3x3(tf::Quaternion(geoQuat.z, -geoQuat.x, -geoQuat.y, geoQuat.w)).getRPY(roll, pitch, yaw);
-        transformSum[0] = -pitch;
-        transformSum[1] = -yaw;
-        transformSum[2] = roll;
+        transformSum[0] = -pitch; // ry
+        transformSum[1] = -yaw;   // rz
+        transformSum[2] = roll;   // rx
         transformSum[3] = laserOdometry->pose.pose.position.x;
         transformSum[4] = laserOdometry->pose.pose.position.y;
         transformSum[5] = laserOdometry->pose.pose.position.z;
