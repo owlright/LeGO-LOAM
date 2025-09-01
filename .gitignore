@@ -6,3 +6,4 @@ build/
 *.bag
 bin/*
 !bin/.gitkeep
+__pycache__/
